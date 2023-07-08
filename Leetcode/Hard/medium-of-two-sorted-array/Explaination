@@ -1,0 +1,29 @@
+Say we have 2 arrays a and b
+
+We will do binary search of cutting away the median of either a or b.
+
+Lets say we want to find the ordinal k of combined array a and b.
+
+lets say a[a_mid] <= b[b_mid].
+
+We know that the order of the combined array a1 <= a_mid <= b_mid <= b2.
+
+if a_mid + b_mid < k.
+
+We know that
+a1 < a2 < a3 < a4 < a_mid < a6 < a7
+
+b1 < b2 < b_mid
+
+We know in the combined array, the worst case scenerio.
+
+[ a1, a2, a3, a4, b1, b2 ] < a_mid 
+
+let (a + b) denote the combined array
+
+so the order of a_mid is less than k and (a + b)[k] > a[a_mid] and we can cut array elements in a that is left of a_mid.
+
+With the same argument
+if a_mid + b_mid >= k
+
+we can argue that (a + b)[k] <= b[b_mid] and we can cut array elements in b that is right of b_mid.
