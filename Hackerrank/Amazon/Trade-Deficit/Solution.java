@@ -36,7 +36,7 @@ public class Solution {
                 result.add(country);
             }
         }
-
+        Collections.sort(result);
         return result;
     }
 }
