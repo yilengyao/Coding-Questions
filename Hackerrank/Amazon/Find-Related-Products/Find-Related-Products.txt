@@ -1,0 +1,28 @@
+Find Related Products
+
+This question is based on the product recommendation system on Amazon. Every time you open the product page on Amazon you can see a section "People who viewed this also viewed". Now given a product relationship represented as a a graph(adjacent list), find out the largest connected component on this graph.
+
+Notice the graph is transitive.
+
+For example:
+
+Input:
+[["product1", "product2", "product3"]
+["product5", "product2"]
+["product6", "product7"]
+["product18", "product7"]
+
+Output:
+["product1", "product2", "product3", "product5"]
+
+Explanation:
+
+Here product1 has 2 recommendations: "product2", "product3"
+Product2 has 1 recommendation: "product5"
+
+Put it together we have the largest recommendation component ["product1", "product2", "product3", "product5"]
+
+Notice; ["product6", "product7", "product8"] is also a connected component but samaller thatn the previous one.
+
+Signature
+public List<String> findLargestGroup(List<List<String>> items)
