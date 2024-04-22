@@ -1,0 +1,30 @@
+Top K Frequent Words
+At the holiday season, your teammate has collected reviews on children's games. Your job is to identify which games are mentioned most in the reviews.
+Implement a function/method that finds the top K games mentioned from a list of games and list of reviews.
+Constraints:
+The comparison of strings is case-insensitive. If the value of topKGames is more than the number of games, return the names of only the games mentioned in the reviews. If games are mentioned an equal number of times in reviews, sort by the count of reviews.
+Input:
+The input to the function/method has five arguments: num, an integer representing the number of games
+topKGames, an integer representing the number of top games your function/ method needs to return;
+games, a list of strings representing the games, numReviews, an integer representing the number of reviews; reviews, a list of strings of review content that consists of whitespace-separated words
+Output:
+Return a list of strings with the top K games mentioned in order of most to least Example:OneCode.com
+num = 6
+topkGames = 2
+games = ["osmo", "uno", "playmonster", "Icr", "buzzed", pieface"]
+numReviews = 7
+reviews = [
+"The new osmo is super fun for my kids",
+"Osmo is the hottest of the season! Osmo will be on every kid's wishlist!",
+"Expect the Playmonster drone to be very popular this year, PlayMonster",
+"Uno is our family tradition"|
+"Playmonster and Osmo are the games to go with for my family's holiday grouping, Playmonster is good",
+"For parents of older kids, look into buying them an LCR",
+"PieFace is becoming popular among children."
+];
+Output:
+["osmo", "playmonster"]
+Explanation:
+osmo - 4
+playmonster - 4
+"osmo" should be placed before "playmonster" in the result because "osmo" appears in 3 different reviews and "playmonster" appears in 2 different reviews.
