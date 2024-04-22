@@ -1,0 +1,66 @@
+import java.util.*;
+
+public class Solution {
+	public int humanDays(int[][] matrix) {
+		int numRows = matrix.length;
+		int numColumns = matrix[0].length;
+
+		int countZero = countZero(matrix, numRows, numColumns);
+		
+		if (countZero == numRows * numColumns) {
+		    return -1;
+		}
+		
+		int days = 0;
+		while(countZero > 0) {
+		    countZero = outBreak(matrix, countZero, numRows, numColumns);
+		    numRounds++;
+		}
+
+		return days;
+	}
+	
+	public int outBreak(int[][] matrix, int countZero, int numRows, int numColumns) {
+	    Set<List<Integer>> infected = new HashSet<>(new ArrayList<>());
+	 	for (int row = 0; row < numRows; row++) {
+	        for (int col = 0; col < numColumns; col++) {
+	            if (row - 1 >= 0 
+	            && matrix[row - 1][col] == 1 
+	            && matrix[row][col] == 0) {
+	                infected.add(new ArrayList<>(Arrays.asList(row, col)));
+	            } else if (col - 1 >= 0 
+	            && matrix[row][col - 1] == 1 
+	            && matrix[row][col] == 0) {
+	                infected.add(new ArrayList<>(Arrays.asList(row, col)));
+	            } else if (row + 1 < numRows 
+	            && matrix[row + 1][col] == 1
+	            && matrix[row][col] == 0) {
+	                infected.add(new ArrayList<>(Arrays.asList(row, col)));
+	            } else if (col + 1 < numColumns 
+	            && matrix[row][col + 1] == 1
+	            && matrix[row][col] == 0) {
+	                infected.add(new ArrayList<>(Arrays.asList(row, col)));
+	            }
+	        }
+	    }
+	    for(List<Integer> zombie: infected) {
+	        matrix[zombie.get(0)][zombie.get(1)] = 1;
+	        countZero--;
+	    }
+	    return countZero;
+	}
+	
+	public int countZero(int[][] matrix, int numRows, int numColumns) {
+	    
+	    int count = 0;
+	    for (int row = 0; row < numRows; row++) {
+	        for (int col = 0; col < numColumns; col++) {
+	            if (matrix[row][col] == 0) {
+	                count++;
+	            }
+	        }
+	        
+	    }
+	    return count;
+	}
+}

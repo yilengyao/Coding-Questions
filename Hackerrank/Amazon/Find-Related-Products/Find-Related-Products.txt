@@ -22,7 +22,7 @@ Product2 has 1 recommendation: "product5"
 
 Put it together we have the largest recommendation component ["product1", "product2", "product3", "product5"]
 
-Notice; ["product6", "product7", "product8"] is also a connected component but samaller thatn the previous one.
+Notice; ["product6", "product7", "product8"] is also a connected component but smaller than the previous one.
 
 Signature
 public List<String> findLargestGroup(List<List<String>> items)
