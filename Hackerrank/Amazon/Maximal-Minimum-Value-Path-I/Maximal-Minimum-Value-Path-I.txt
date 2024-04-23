@@ -1,0 +1,24 @@
+Maximal Minimum Value Path I
+Given a two 2D integer array, find the max score of a path from the upper left cell to bottom right cell. The score of a path is the minimum value in that path.
+
+Notice: the path can only right and down.
+
+For example:
+
+Input:
+
+[7,5,3]
+[2,0,9]
+[4,5,9]
+
+Here are some paths from [0,0] to [2,2] and the minimum value on each path:
+
+path: 7->2->4->5->9, minimum value on this path: 2
+
+path: 7->2->0->9->9, minimum value on this path: 0
+
+path: 7->2->0->5->9, minimum value on this path: 0
+
+In the end the max score(the min value) of all the paths is 3. 
+
+Output: 3
